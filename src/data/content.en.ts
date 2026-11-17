@@ -1,0 +1,191 @@
+/**
+ * VERSION ANGLAISE DU SITE : même structure que content.ts (le français).
+ * Quand tu changes un texte en français, change-le aussi ici.
+ */
+import { fr, type Content, type Project, type Station } from './content';
+
+const projects: Project[] = [
+  {
+    category: 'Application',
+    title: 'LiveTournois',
+    context: 'Team project (3 people) · project lead',
+    description: 'Esports tournament management app: teams, games, matches and results, backed by an Oracle database.',
+    highlights: [
+      'Project lead: task allocation and team follow-up on Git',
+      'MVC architecture (DAO, services, controllers) and JavaFX / Scene Builder interface',
+      'Oracle database design and queries, PDF export with iText',
+    ],
+    tech: ['Java', 'JavaFX', 'Oracle', 'Maven', 'Git'],
+    featured: true,
+  },
+  {
+    category: 'Design',
+    title: 'Client requirements analysis',
+    context: 'Team project (3 people) · requirements analysis',
+    description:
+      "Understanding a client company's needs and answering them with a solution. The need: make desk booking in an open-plan (flex office) workspace simpler, with one-step booking, check-in on arrival and occupancy tracking.",
+    highlights: [
+      'Talking with the client and rephrasing their expectations for the team',
+      'User stories, UML use cases, personas, user flows',
+      'Requirements ranked by priority: expressed, latent, indifferent, reverse',
+    ],
+  },
+  {
+    category: 'Data',
+    title: 'Oracle databases',
+    context: 'Two projects · in a team of three, then two',
+    description:
+      'First, building the full database of an e-commerce website. Then, taking over an existing database: spotting its design flaws, redesigning the schema and writing sales analysis queries.',
+    highlights: [
+      'Data dictionary, UML (Win’Design), relational schema',
+      'SQL scripts with constraints: keys, CHECK, UNIQUE',
+      'Analysis queries: partial deliveries, pre-tax/after-tax totals, revenue',
+    ],
+    tech: ['Oracle', 'SQL'],
+  },
+  {
+    category: 'Video game',
+    title: 'Sokoban',
+    context: 'Solo project · graphical interface',
+    description: 'Puzzle game in JavaFX with 10 levels of different sizes, built by separating the game logic (model) from the interface (FXML and controller).',
+    highlights: [
+      '.xsb file reader: load new level packs without restarting the game',
+      'Automatic deadlock detection when a box gets stuck in a corner',
+      'Grid recalculated in real time when the window is resized',
+      'Move history for undo, best scores saved to a file',
+      'Character sprite that changes with the direction',
+    ],
+    tech: ['Java', 'JavaFX', 'Maven'],
+    playable: true,
+  },
+  {
+    category: 'Web',
+    title: 'La Trattoria, pizzeria website',
+    context: 'Pair project',
+    description: 'Five-page showcase website for a pizzeria in Toulouse: home page with background video, menu of 13 pizzas, customer reviews, opening hours and contact form.',
+    highlights: ['Mobile-friendly layout', 'Embedded Google Maps', 'Hosted on GitLab Pages'],
+    tech: ['HTML', 'CSS'],
+    link: { label: 'Visit the site', href: 'https://ayoub-b749a8.gitlab.io/' },
+  },
+];
+
+const parcours: Station[] = [
+  { annee: '2022 – 2025', titre: 'High school diploma', lieu: 'Lycée Jules Guesde, Montpellier', detail: 'Maths and Computer Science majors', etat: 'fait' },
+  { annee: 'Sept. 2025', titre: 'BAFA', lieu: 'Youth leader certificate', detail: 'Leading and supervising groups', etat: 'fait' },
+  { annee: '2025 – 2028', titre: 'Bachelor in Computer Science', lieu: 'IUT de Blagnac (BUT)', detail: 'Currently in 2nd year', etat: 'en-cours' },
+  { annee: 'Mar → May 2027', titre: 'Internship', lieu: 'Toulouse area', detail: '10 weeks · looking now!', etat: 'a-venir' },
+  { annee: '2028', titre: 'Degree', lieu: 'Bachelor in Computer Science', etat: 'a-venir' },
+];
+
+export const en: Content = {
+  person: {
+    ...fr.person,
+    title: 'Developer in training',
+    status: 'Looking for a 10-week internship · March → May 2027',
+    cv: 'cv/CV-Ayoub-El-Maftah.pdf',
+  },
+  nav: [
+    { id: 'profil', label: 'About' },
+    { id: 'projets', label: 'Projects' },
+    { id: 'competences', label: 'Skills' },
+    { id: 'formation', label: 'Education' },
+    { id: 'contact', label: 'Contact' },
+  ],
+  intro:
+    'Second-year Computer Science student (BUT) at IUT de Blagnac, near Toulouse. I like building things that actually run: Java applications with their database, websites and small games.',
+  terminal: [
+    { cmd: 'whoami', out: ['Ayoub El Maftah · CS student, 2nd year'] },
+    { cmd: 'cat stack.txt', out: ['Java · JavaFX · Oracle SQL · PL/SQL', 'HTML · CSS · JS · PHP · Python'] },
+    { cmd: 'cat availability.txt', out: ['internship: 2027-03-08 → 2027-05-16', 'area     : Blagnac · Toulouse'] },
+  ],
+  about: {
+    title: 'About me',
+    paragraphs: [
+      'I’ve been passionate about computer science since high school, where I took Computer Science as a major. I chose a Bachelor in Computer Science to make it my career, and what I enjoy most is web development and databases: designing a clear interface and organising the data behind it.',
+      'Curious and thorough, I like understanding how things work and building them myself. I’m now looking for an internship to put these skills into practice within a team.',
+    ],
+    facts: [
+      { label: 'Education', value: 'Bachelor in CS (BUT)', detail: 'IUT de Blagnac, 2025 – 2028' },
+      { label: 'Languages', value: 'French · English C1', detail: 'Spanish B2 · Arabic (bilingual)' },
+      { label: 'Location', value: 'Blagnac', detail: 'Driving licence · Toulouse by public transport' },
+      { label: 'Interests', value: 'Sport · Video games', detail: 'Perfumery' },
+    ],
+  },
+  experiences: [],
+  categories: ['All', 'Application', 'Design', 'Data', 'Video game', 'Web'],
+  projects,
+  parcours,
+  toolGroups: [
+    { title: 'Languages', items: ['Java', 'Python', 'Bash'] },
+    { title: 'Web', items: ['HTML', 'CSS', 'JavaScript', 'PHP'] },
+    { title: 'Data', items: ['Oracle', 'SQL'] },
+    { title: 'Tools', items: ['Git', 'Maven', 'VS Code'] },
+  ],
+  otherSkills: [
+    { title: 'Methods', items: ['Requirements gathering', 'Project management', 'Specifications', 'UML', 'JUnit testing'] },
+    { title: 'Soft skills', items: ['Organised and thorough', 'Persistent', 'Good listener', 'Teamwork', 'Group leadership (BAFA)'] },
+    { title: 'Languages', items: ['French', 'English C1', 'Spanish B2', 'Arabic (bilingual)'] },
+  ],
+  contact: {
+    sentence: 'I’m looking for a 10-week internship from 8 March to 16 May 2027, in the Toulouse area. An offer, a project or a question: feel free to reach out.',
+  },
+  ui: {
+    skip: 'Skip to content',
+    contactBtn: 'Contact me',
+    menuOpen: 'Open menu',
+    menuClose: 'Close menu',
+    backTop: 'back to top',
+    themeLight: 'Switch to light mode',
+    themeDark: 'Switch to dark mode',
+    langSwitch: 'Lire en français',
+    heroProjects: 'See my projects',
+    heroCv: 'Download my CV',
+    heroBadge: 'Studying',
+    scrollDown: 'Scroll down to the profile',
+    terminalLabel: 'Terminal-style introduction',
+    profileLabel: 'About',
+    photoAlt: 'Portrait of Ayoub El Maftah',
+    projectsLabel: 'Projects',
+    projectsTitle: 'What I’ve built',
+    projectsIntro: 'Projects carried out at IUT de Blagnac, on my own or in a team.',
+    projectsFilter: 'Filter projects',
+    play: '▶ Play a game',
+    closeGame: '■ Close the game',
+    loading: 'Loading…',
+    experienceLabel: 'Experience',
+    experienceTitle: 'Work experience',
+    skillsLabel: 'Skills',
+    skillsTitle: 'My toolbox',
+    educationLabel: 'Education',
+    educationTitle: 'My journey',
+    educationIntro: 'Next stop: a 10-week internship, starting 8 March 2027.',
+    contactLabel: 'Contact',
+    contactTitle: 'Got an internship?',
+    copy: 'Copy address',
+    copied: 'Address copied',
+    copiedSr: 'Email address copied',
+    rights: 'All rights reserved.',
+    top: 'Back to top',
+    soko: {
+      levels: ['Push a box', 'Go around', 'Small obstacle', 'Three boxes'],
+      level: 'Level',
+      moves: 'moves',
+      pushes: 'pushes',
+      undo: '↶ Undo',
+      restart: '↻ Restart',
+      prev: 'Previous level',
+      next: 'Next level',
+      hint: 'Arrow keys or WASD · swipe on mobile · Ctrl+Z undo · R restart',
+      aria: 'Sokoban mini-game: arrow keys or WASD to move, Ctrl+Z to undo, R to restart',
+      win: 'Level complete!',
+      nextBtn: 'Next level →',
+      allDone: 'All levels done, well played!',
+      stuck: 'Stuck!',
+      stuckMsg: 'A box is jammed.',
+      undoMove: 'Undo move',
+      restartBtn: 'Restart',
+      soundOn: 'Mute sound',
+      soundOff: 'Turn sound on',
+    },
+  },
+};

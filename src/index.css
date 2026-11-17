@@ -1,0 +1,156 @@
+@import 'tailwindcss';
+
+/* Le mode sombre s'active avec la classe .dark sur <html> (bouton dans la barre du haut). Mode sombre par défaut. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Palette : nuit bleutée, violet électrique en accent et un vert "terminal" en second accent.
+ * Change les couleurs ici, tout le site suit. Bloc @theme = mode clair, bloc .dark = mode sombre.
+ */
+@theme {
+  --color-paper: #f6f6fa;
+  --color-surface: #ffffff;
+  --color-subtle: #eeeef5;
+  --color-ink: #12131a;
+  --color-muted: #5d6072;
+  --color-line: #dcdce8;
+  --color-accent: #5b47e0;
+  --color-accent-soft: #ebe8fd;
+  --color-on-accent: #ffffff;
+  --color-term: #0f9d58; /* vert du terminal */
+  --color-glow: rgba(91, 71, 224, 0.18);
+
+  --font-sans: 'Space Grotesk Variable', 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, monospace;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark {
+  color-scheme: dark;
+  --color-paper: #0a0b10;
+  --color-surface: #11131b;
+  --color-subtle: #0d0f16;
+  --color-ink: #eceef5;
+  --color-muted: #8d92a6;
+  --color-line: #22263a;
+  --color-accent: #8b7bff;
+  --color-accent-soft: #1b1932;
+  --color-on-accent: #0a0b10;
+  --color-term: #4ade80;
+  --color-glow: rgba(139, 123, 255, 0.22);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    overflow-x: clip;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    transition: background-color 0.4s, color 0.4s;
+  }
+  section[id] {
+    scroll-margin-top: 72px;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Points discrets en fond de l'accueil, qui s'effacent vers les bords */
+  .dots-bg {
+    background-image: radial-gradient(var(--color-line) 1.2px, transparent 1.2px);
+    background-size: 28px 28px;
+    -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 25%, transparent 78%);
+    mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 25%, transparent 78%);
+  }
+
+  /* Halo de couleur flou derrière l'accueil */
+  .aurora {
+    background:
+      radial-gradient(40% 50% at 75% 30%, var(--color-glow), transparent 70%),
+      radial-gradient(30% 40% at 20% 70%, color-mix(in oklab, var(--color-term) 12%, transparent), transparent 70%);
+    filter: blur(20px);
+  }
+
+  /* Lien souligné qui se trace au survol */
+  .link-line {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+    transition: background-size 0.5s var(--ease-out-expo);
+  }
+  .link-line:hover {
+    background-size: 100% 1px;
+  }
+
+  /* Curseur clignotant du terminal */
+  .caret {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.1em;
+    vertical-align: -0.18em;
+    background: var(--color-term);
+    animation: blink 1.05s steps(1) infinite;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* =====================================================================
+ * PALETTE ÉMERAUDE (celle du site) : activée par data-accent="emerald" sur <html> (index.html).
+ * Enlève cet attribut pour revenir à la palette violette du bloc @theme / .dark plus haut.
+ * ===================================================================== */
+
+/* ---------- Émeraude ---------- */
+html[data-accent='emerald'] {
+  --color-paper: #f4f8f6;
+  --color-subtle: #e9f1ed;
+  --color-ink: #0d1a15;
+  --color-muted: #557064;
+  --color-line: #d3e3db;
+  --color-accent: #047857;
+  --color-accent-soft: #dcf3e9;
+  --color-term: #b7791f;
+  --color-glow: rgba(4, 120, 87, 0.2);
+}
+html.dark[data-accent='emerald'] {
+  --color-paper: #06100c;
+  --color-surface: #0b1813;
+  --color-subtle: #081410;
+  --color-ink: #e8f3ee;
+  --color-muted: #87a597;
+  --color-line: #1a2e26;
+  --color-accent: #34d399;
+  --color-accent-soft: #10291f;
+  --color-on-accent: #04110b;
+  --color-term: #e7c27d; /* touche dorée pour aller avec l'émeraude */
+  --color-glow: rgba(52, 211, 153, 0.22);
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr" data-accent="emerald">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayoub El Maftah · Portfolio</title>
+    <meta name="description" content="Portfolio d'Ayoub El Maftah, étudiant en BUT Informatique à l'IUT de Blagnac : projets, compétences, parcours et contact." />
+    <!-- Aperçu quand on partage le lien (LinkedIn, WhatsApp, Discord…) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ayoub-elmaftah.github.io/" />
+    <meta property="og:site_name" content="Ayoub El Maftah" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:title" content="Ayoub El Maftah · Développeur en formation" />
+    <meta property="og:description" content="Étudiant en BUT Informatique à l'IUT de Blagnac, je cherche un stage de 10 semaines (mars → mai 2027) autour de Toulouse. Projets, compétences et contact." />
+    <meta property="og:image" content="https://ayoub-elmaftah.github.io/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ayoub El Maftah, développeur en formation, BUT Informatique" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ayoub El Maftah · Développeur en formation" />
+    <meta name="twitter:description" content="Étudiant en BUT Informatique, je cherche un stage de 10 semaines (mars → mai 2027) autour de Toulouse." />
+    <meta name="twitter:image" content="https://ayoub-elmaftah.github.io/og.png" />
+    <link rel="canonical" href="https://ayoub-elmaftah.github.io/" />
+    <meta name="theme-color" content="#06100c" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>
+      // Applique le thème avant l'affichage (sombre par défaut), pour éviter un flash
+      try {
+        const saved = localStorage.getItem('theme-v2');
+        const dark = saved ? saved === 'dark' : true;
+        document.documentElement.classList.toggle('dark', dark);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
