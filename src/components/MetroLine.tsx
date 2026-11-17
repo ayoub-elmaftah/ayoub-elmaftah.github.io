@@ -112,7 +112,7 @@ export default function MetroLine({ stations }: { stations: Station[] }) {
         </div>
         <ol className="relative grid" style={{ gridTemplateColumns: `repeat(${n}, minmax(0, 1fr))` }}>
           {stations.map((s, i) => (
-            <li key={s.titre} className="flex flex-col items-center gap-5 px-3">
+            <li key={i} className="flex flex-col items-center gap-5 px-3">
               {dot(s, i)}
               {label(s, i, 'center')}
             </li>
@@ -134,7 +134,7 @@ export default function MetroLine({ stations }: { stations: Station[] }) {
         </div>
         <ol ref={listeV} className="relative grid gap-9">
           {stations.map((s, i) => (
-            <li key={s.titre} className="flex gap-5">
+            <li key={i} className="flex gap-5">
               {dot(s, i)}
               {label(s, i, 'left')}
             </li>

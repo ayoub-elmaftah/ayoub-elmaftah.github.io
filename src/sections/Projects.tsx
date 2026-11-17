@@ -98,7 +98,7 @@ export default function Projects() {
               const on = filtre === i;
               return (
                 <button
-                  key={c}
+                  key={i}
                   type="button"
                   aria-pressed={on}
                   onClick={() => setFiltre(i)}
@@ -115,7 +115,7 @@ export default function Projects() {
             <AnimatePresence mode="popLayout">
               {shown.map((p) => (
                 <motion.div
-                  key={p.title}
+                  key={projects.indexOf(p)}
                   layout
                   initial={{ opacity: 0, y: 24, scale: 0.98 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}

@@ -12,8 +12,8 @@ export default function Skills() {
         <SectionHeader id="skills-title" label={ui.skillsLabel} title={ui.skillsTitle} />
 
         <motion.div variants={stagger(0.08)} initial="hidden" whileInView="show" viewport={inView} className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {toolGroups.map((group) => (
-            <motion.div key={group.title} variants={fadeUp} className="rounded-2xl border border-line bg-surface p-6">
+          {toolGroups.map((group, gi) => (
+            <motion.div key={gi} variants={fadeUp} className="rounded-2xl border border-line bg-surface p-6">
               <h3 className="font-mono text-[0.75rem] font-medium tracking-[0.08em] text-muted uppercase">{group.title}</h3>
               <ul className="mt-4 grid gap-1">
                 {group.items.map((item) => (
@@ -30,8 +30,8 @@ export default function Skills() {
         </motion.div>
 
         <motion.div variants={stagger(0.08)} initial="hidden" whileInView="show" viewport={inView} className="mt-6 grid gap-6 md:grid-cols-3">
-          {otherSkills.map((g) => (
-            <motion.div key={g.title} variants={fadeUp} className="rounded-2xl border border-line bg-surface p-6">
+          {otherSkills.map((g, gi) => (
+            <motion.div key={gi} variants={fadeUp} className="rounded-2xl border border-line bg-surface p-6">
               <h3 className="font-mono text-[0.75rem] font-medium tracking-[0.08em] text-muted uppercase">{g.title}</h3>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {g.items.map((it) => (

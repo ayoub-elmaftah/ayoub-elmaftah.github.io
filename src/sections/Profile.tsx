@@ -24,14 +24,14 @@ export default function Profile() {
           </motion.figure>
         </div>
         <motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={inView}>
-          {about.paragraphs.map((p) => (
-            <motion.p key={p} variants={fadeUp} className="mb-5 text-[1.12rem] leading-relaxed">
+          {about.paragraphs.map((p, i) => (
+            <motion.p key={i} variants={fadeUp} className="mb-5 text-[1.12rem] leading-relaxed">
               {p}
             </motion.p>
           ))}
           <motion.dl variants={stagger(0.08)} className="mt-8 grid gap-4 sm:grid-cols-2">
-            {about.facts.map((f) => (
-              <motion.div key={f.label} variants={fadeUp} className="rounded-xl border border-line bg-surface p-5 transition-[transform,border-color] duration-300 hover:-translate-y-0.5 hover:border-accent/40">
+            {about.facts.map((f, i) => (
+              <motion.div key={i} variants={fadeUp} className="rounded-xl border border-line bg-surface p-5 transition-[transform,border-color] duration-300 hover:-translate-y-0.5 hover:border-accent/40">
                 <dt className="font-mono text-[0.74rem] font-medium tracking-[0.06em] text-muted uppercase">{f.label}</dt>
                 <dd className="mt-1.5 text-[1.08rem] font-medium">{f.value}</dd>
                 {f.detail && <dd className="text-[0.93rem] text-muted">{f.detail}</dd>}
