@@ -106,8 +106,8 @@ export const en: Content = {
     ],
     facts: [
       { label: 'Education', value: 'Bachelor in CS (BUT)', detail: 'IUT de Blagnac, 2025 – 2028' },
-      { label: 'Languages', value: 'French · English C1', detail: 'Spanish B2 · Arabic (bilingual)' },
-      { label: 'Location', value: 'Blagnac', detail: 'Driving licence · Toulouse by public transport' },
+      { label: 'Languages', value: 'French · English B2', detail: 'Spanish B2 · Amazigh (Tashelhit)' },
+      { label: 'Mobility', value: 'Toulouse area', detail: 'Based in Blagnac · by public transport' },
       { label: 'Interests', value: 'Sport · Video games', detail: 'Perfumery' },
     ],
   },
@@ -124,7 +124,7 @@ export const en: Content = {
   otherSkills: [
     { title: 'Methods', items: ['Requirements gathering', 'Project management', 'Specifications', 'UML', 'JUnit testing'] },
     { title: 'Soft skills', items: ['Organised and thorough', 'Persistent', 'Good listener', 'Teamwork', 'Group leadership (BAFA)'] },
-    { title: 'Languages', items: ['French', 'English C1', 'Spanish B2', 'Arabic (bilingual)'] },
+    { title: 'Languages', items: ['French', 'English B2', 'Spanish B2', 'Amazigh (Tashelhit)'] },
   ],
   contact: {
     sentence: 'I’m looking for a 10-week internship from 8 March to 16 May 2027, in the Toulouse area. An offer, a project or a question: feel free to reach out.',

@@ -47,8 +47,8 @@ export const about = {
   ],
   facts: [
     { label: 'Formation', value: 'BUT Informatique', detail: 'IUT de Blagnac, 2025 – 2028' },
-    { label: 'Langues', value: 'Français · Anglais C1', detail: 'Espagnol B2 · Arabe (bilingue)' },
-    { label: 'Localisation', value: 'Blagnac', detail: 'Permis B · Toulouse en transports' },
+    { label: 'Langues', value: 'Français · Anglais B2', detail: 'Espagnol B2 · Amazigh (chleuh)' },
+    { label: 'Mobilité', value: 'Toulouse et alentours', detail: 'Basé à Blagnac · en transports en commun' },
     { label: 'Centres d’intérêt', value: 'Sport · Jeux vidéo', detail: 'Parfumerie' },
   ] as { label: string; value: string; detail?: string }[],
 };
@@ -184,7 +184,7 @@ export const toolGroups: { title: string; items: LogoName[] }[] = [
 export const otherSkills = [
   { title: 'Méthodes', items: ['Recueil de besoins', 'Gestion de projet', 'Cahier des charges', 'UML', 'Tests JUnit'] },
   { title: 'Savoir-être', items: ['Organisé et rigoureux', 'Persévérant', 'À l’écoute', 'Travail en équipe', 'Encadrement de groupes (BAFA)'] },
-  { title: 'Langues', items: ['Français', 'Anglais C1', 'Espagnol B2', 'Arabe (bilingue)'] },
+  { title: 'Langues', items: ['Français', 'Anglais B2', 'Espagnol B2', 'Amazigh (chleuh)'] },
 ];
 
 export const contact = {
